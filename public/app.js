@@ -347,7 +347,104 @@ views.home = () => {
       <button class="btn" onclick="window._av.submitCallback()">Submit Callback</button>
     </div>
 
-    <h2 class="section-title" style="margin-top:30px">Our Company Projects</h2>
+    <h2 class="ultra-flow-title">
+  SUCCESSFUL PROCESS, SUCCESSFUL PROJECT
+</h2>
+
+<div class="ultra-flow-subtitle">
+  Journey to Your Dream Home
+</div>
+
+<div class="ultra-flow-container">
+
+  <div class="ultra-flow-grid">
+
+    ${[
+      {
+        no:'01',
+        icon:'👨‍💼',
+        title:'MEET OUR EXPERT',
+        desc:'Connect with our property specialists'
+      },
+      {
+        no:'02',
+        icon:'🏠',
+        title:'SELECT A PROPERTY',
+        desc:'Choose from the best properties'
+      },
+      {
+        no:'03',
+        icon:'📍',
+        title:'VISIT PROPERTY',
+        desc:'Schedule a visit and explore in person'
+      },
+      {
+        no:'04',
+        icon:'🛡️',
+        title:'LOAN ASSISTANCE',
+        desc:'Get expert help for easy home loans'
+      },
+      {
+        no:'05',
+        icon:'🔑',
+        title:'GET YOUR DREAM HOME',
+        desc:'Move in and make it truly yours'
+      },
+      {
+        no:'06',
+        icon:'🎧',
+        title:'CUSTOMER SUPPORT',
+        desc:'We’re here for you, always'
+      }
+
+    ].map((item,index,array)=>`
+
+      <div class="ultra-card">
+
+        <div class="ultra-number">
+          ${item.no}
+        </div>
+
+        <div class="ultra-icon-area">
+
+          <div class="ultra-icon-glow"></div>
+
+          <div class="ultra-icon">
+            ${item.icon}
+          </div>
+
+        </div>
+
+        <div class="ultra-card-title">
+          ${item.title}
+        </div>
+
+        <div class="ultra-card-desc">
+          ${item.desc}
+        </div>
+
+        <div class="ultra-bottom-line"></div>
+
+      </div>
+
+      ${index < array.length - 1
+        ? `
+          <div class="ultra-arrow">
+            »
+          </div>
+        `
+        : ''
+      }
+
+    `).join('')}
+
+  </div>
+
+</div>
+
+<h2 class="section-title" style="margin-top:45px">
+  Our Company Projects
+</h2>
     <div class="grid cols-3">
       ${company.map(p=>`<div class="card" ${p.url?`onclick="window.open('${p.url}','_blank')" style="cursor:pointer"`:''}><img src="${p.img}" style="width:100%;border-radius:10px;margin-bottom:8px"/><h3>${esc(p.title)}</h3><p>${esc(p.desc)}</p></div>`).join('')}
     </div>
